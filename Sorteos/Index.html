@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sorteador de Instagram</title>
+  <link rel="stylesheet" href="Estilos.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🎉 Sorteo de Instagram</h1>
+    <div class="info">
+      <strong>1.</strong> Pega la URL del post/reel de tu sorteo.<br>
+      <strong>2.</strong> Pega tu lista de comentarios o usuarios (uno por línea, o copia columnas de Excel/CSV).<br>
+      <strong>3.</strong> Opcional: importa un archivo CSV de usuarios/comentarios.<br>
+      <strong>4.</strong> Sortea a los ganadores.
+    </div>
+    <form id="raffleForm" autocomplete="off">
+      <label for="url">URL del post/reel de Instagram</label>
+      <input type="text" id="url" placeholder="https://www.instagram.com/p/xxxxxx/" required>
+      <div class="import-section">
+        <label for="csvFile">Importar CSV/Excel:</label>
+        <input type="file" id="csvFile" accept=".csv,.txt">
+        <span class="import-tip">(Obligatorio: columna de usuario. Opcional: comentarios)</span>
+      </div>
+      <label for="comments">Pega aquí usuarios o comentarios:<br>
+        <span class="example">
+            Ejemplo válido:<br>
+            <code>usuario1: quiero!</code><br>
+            <code>usuario2</code><br>
+            <code>usuario3, comentario acá</code><br>
+            <code>usuario4; otro comentario</code>
+        </span>
+      </label>
+      <textarea id="comments" placeholder="usuario: comentario&#10;usuario2: otro comentario&#10;usuario3"></textarea>
+      <div class="filters">
+        <label>Ganadores:
+          <input type="number" id="winners" min="1" value="1" max="100">
+        </label>
+      </div>
+      <button type="button" class="btn" id="processCommentsBtn">Procesar participantes</button>
+      <button type="submit" class="btn" style="display:none" id="raffleBtn">¡Sortear!</button>
+    </form>
+    <div id="commentList" class="comment-list" style="display:none"></div>
+    <div id="winnersOutput" class="winner-list" style="display:none"></div>
+  </div>
+  <script src="Sorteo.js"></script>
+</body>
+</html>

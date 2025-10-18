@@ -1,0 +1,208 @@
+body {
+  background: linear-gradient(120deg, #ffe6fa 0%, #f3f7ff 100%);
+  font-family: 'Montserrat', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #222;
+}
+.container {
+  max-width: 490px;
+  margin: 30px auto;
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: 0 6px 36px #c67aff29;
+  padding: 26px 24px 44px 24px;
+  position: relative;
+  overflow: hidden;
+  animation: popin 0.6s;
+}
+h1 {
+  text-align: center;
+  color: #e1306c;
+  font-size: 2.2em;
+  font-weight: 700;
+  margin-bottom: 12px;
+  letter-spacing: 0.02em;
+  text-shadow: 0 2px 16px #fbb1e74d;
+}
+h2 {
+  font-size: 1.22em;
+  color: #888;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+label {
+  display: block;
+  font-weight: 600;
+  margin-top: 16px;
+  margin-bottom: 6px;
+  color: #444;
+  font-size: 1.04em;
+}
+input[type="text"], input[type="number"], textarea {
+  width: 100%;
+  border: 1px solid #e9d4ee;
+  border-radius: 8px;
+  padding: 12px 10px;
+  font-size: 1.05em;
+  margin-bottom: 13px;
+  background: #fafafd;
+  box-sizing: border-box;
+  transition: border 0.18s;
+}
+input[type="text"]:focus, textarea:focus {
+  border: 1.5px solid #e1306c;
+  outline: none;
+}
+input[type="number"] {
+  max-width: 80px;
+}
+textarea {
+  min-height: 70px;
+  resize: vertical;
+}
+.btn {
+  display: block;
+  width: 100%;
+  margin-top: 18px;
+  padding: 13px;
+  background: linear-gradient(90deg, #fdc468 0%, #df4996 100%);
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1em;
+  cursor: pointer;
+  box-shadow: 0 2px 12px #e1306c22;
+  transition: box-shadow 0.2s, transform 0.12s;
+  letter-spacing: 0.02em;
+}
+.btn:active {
+  box-shadow: 0 1px 2px #e1306c33;
+  transform: scale(0.98);
+}
+.filters {
+  margin: 18px 0;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.filters label {
+  margin: 0;
+  font-weight: 500;
+  color: #333;
+  font-size: 1em;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  cursor: pointer;
+  user-select: none;
+}
+.winner-list {
+  margin-top: 26px;
+  text-align: center;
+  background: linear-gradient(100deg, #faf3f8 65%, #e3ffd7 100%);
+  border-radius: 14px;
+  padding: 22px 6px 14px 6px;
+  border: 2px dashed #e1306c88;
+  box-shadow: 0 0px 18px #f9f0ff55;
+  animation: fadein 0.55s;
+}
+.winner {
+  font-size: 1.33em;
+  color: #e1306c;
+  font-weight: bold;
+  margin: 8px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  animation: popwin 0.7s;
+  letter-spacing: 0.01em;
+}
+.winner svg {
+  width: 26px;
+  height: 26px;
+  vertical-align: middle;
+  fill: #fdc468;
+  stroke: #e1306c;
+  stroke-width: 1.5;
+  margin-right: 2px;
+  filter: drop-shadow(0 2px 6px #fdc46844);
+}
+.comment-list {
+  max-height: 160px;
+  overflow-y: auto;
+  border-radius: 10px;
+  background: #f7f7fb;
+  padding: 10px;
+  margin-bottom: 10px;
+  font-size: 1.01em;
+  border: 1px solid #eee;
+  box-shadow: 0 0 8px #e4e4e433;
+}
+.comment-row {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-bottom: 4px;
+  padding-bottom: 2px;
+  font-size: 1em;
+}
+.comment-row span.user {
+  font-weight: bold;
+  color: #e1306c;
+  background: #ffe9f6;
+  border-radius: 7px;
+  padding: 2.5px 10px;
+}
+.info {
+  font-size: 0.97em;
+  color: #666;
+  background: #ffe9f6;
+  padding: 9px 14px;
+  border-radius: 8px;
+  margin-bottom: 14px;
+  border-left: 4px solid #e1306c66;
+}
+.import-section {
+  background: #f4f4ff;
+  border-radius: 8px;
+  padding: 11px 12px 9px 12px;
+  margin-bottom: 12px;
+  font-size: 0.875em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.import-section label {
+  font-weight: 500;
+  margin: 0 6px 0 0;
+}
+.import-tip {
+  font-size:0.95em;
+  color:#a188b1
+}
+.example {
+  font-weight:400;
+  color:#777;
+  font-size:0.98em
+}
+@media (max-width: 520px) {
+  .container {max-width: 99vw; padding: 12px 3vw;}
+  h1 {font-size: 1.35em;}
+}
+@keyframes popwin {
+  0% {transform: scale(0.5) rotate(-10deg); opacity: 0;}
+  78% {transform: scale(1.18) rotate(3deg);}
+  100% {transform: scale(1) rotate(0); opacity: 1;}
+}
+@keyframes fadein {
+  from {opacity:0; transform: translateY(16px);}
+  to {opacity:1; transform: none;}
+}
+@keyframes popin {
+  0% {transform: scale(0.8) translateY(30px); opacity: 0;}
+  100% {transform: scale(1) translateY(0); opacity: 1;}
+}
